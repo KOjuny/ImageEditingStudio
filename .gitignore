@@ -5,4 +5,4 @@ output
 *.csv
 *.out
 *.bash
-*output
+*.sh
