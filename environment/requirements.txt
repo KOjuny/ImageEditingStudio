@@ -1,0 +1,12 @@
+accelerate
+diffusers
+einops
+transformers==4.30.2
+opencv-python
+omegaconf
+pytorch_lightning
+matplotlib
+ftfy
+ipywidgets
+salesforce-lavis
+xformers
