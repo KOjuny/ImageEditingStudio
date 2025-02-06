@@ -12,8 +12,7 @@ from transformers import CLIPTextModel, CLIPTokenizer
 import torchvision.transforms as T
 from tqdm import tqdm
 from models.edit_friendly_ddm.inversion_utils import inversion_forward_process, inversion_reverse_process
-from models.edit_friendly_ddm.ptp_classes import AttentionReplace,AttentionRefine,AttentionStore
-from models.edit_friendly_ddm.ptp_utils import register_attention_control
+from models.p2p.p2p_guidance_forward import p2p_guidance_forward
 import torch.nn.functional as nnf
 from torch.optim.adam import Adam
 from torch import autocast, inference_mode
@@ -242,14 +241,18 @@ class Preprocess_NT(nn.Module):
                 latent = mu * pred_x0 + sigma * eps
                 latent_list.append(latent)
         return latent_list
+    
 
     @torch.no_grad()
-    def ddim_sample(self, x, cond):
+    def ddim_sample(self, x, cond, uncond_embeddings, guidance_scale):
         timesteps = self.scheduler.timesteps
         latent_list=[]
+        latent_list_new = []
+        latent = torch.tensor(x)
+        x = torch.cat([x]*2)
         with torch.autocast(device_type='cuda', dtype=torch.float32):
             for i, t in enumerate(timesteps):
-                cond_batch = cond.repeat(x.shape[0], 1, 1)
+                cond_batch = torch.cat([uncond_embeddings[i],cond])
                 alpha_prod_t = self.scheduler.alphas_cumprod[t]
                 alpha_prod_t_prev = (
                     self.scheduler.alphas_cumprod[timesteps[i + 1]]
@@ -260,17 +263,40 @@ class Preprocess_NT(nn.Module):
                 sigma = (1 - alpha_prod_t) ** 0.5
                 mu_prev = alpha_prod_t_prev ** 0.5
                 sigma_prev = (1 - alpha_prod_t_prev) ** 0.5
-
                 eps = self.unet(x, t, encoder_hidden_states=cond_batch).sample
 
                 pred_x0 = (x - sigma * eps) / mu
                 x = mu_prev * pred_x0 + sigma_prev * eps
                 latent_list.append(x)
-        return latent_list
+                latent = self.diffusion_step(latent, cond_batch, t, guidance_scale)
+                latent_list_new.append(latent)
+        return latent_list, latent_list_new
+    
+    def diffusion_step(self, latents, context, t, guidance_scale, low_resource=False):
+        if low_resource:
+            noise_pred_uncond = self.unet(latents, t, encoder_hidden_states=context[0])["sample"]
+            noise_prediction_text = self.unet(latents, t, encoder_hidden_states=context[1])["sample"]
+        else:
+            latents_input = torch.cat([latents] * 2)
+            noise_pred = self.unet(latents_input, t, encoder_hidden_states=context)["sample"]
+            noise_pred_uncond, noise_prediction_text = noise_pred.chunk(2)
+        noise_pred = noise_pred_uncond + guidance_scale * (noise_prediction_text - noise_pred_uncond)
+        latents = self.scheduler.step(noise_pred, t, latents)["prev_sample"]
+        return latents
+    
+    @torch.no_grad()
+    def latent2image(model, latents, return_type='np'):
+        latents = 1 / 0.18215 * latents.detach()
+        image = model.decode(latents)['sample']
+        if return_type == 'np':
+            image = (image / 2 + 0.5).clamp(0, 1)
+            image = image.cpu().permute(0, 2, 3, 1).numpy()
+            image = (image * 255).astype(np.uint8)
+        return image
 
     @torch.no_grad()
     def extract_latents(self, num_steps, data_path,
-                        inversion_prompt=''):
+                        inversion_prompt='', guidance_scale=7.5):
         self.scheduler.set_timesteps(num_steps)
 
         cond = self.get_text_embeds(inversion_prompt, "")[1].unsqueeze(0) # torch.Size([1, 77, 768]), text embedding을 가져옴
@@ -281,15 +307,18 @@ class Preprocess_NT(nn.Module):
         inverted_x = self.ddim_inversion(cond, latent) # torch.Size([1, 4, 64, 64]) * 50
         # null-text embedding을 optimization하는 부분 넣기
         with torch.enable_grad():
-            uncond_embeddings = self.null_optimization(inverted_x, 10, 1e-5, 7.5)
+            uncond_embeddings = self.null_optimization(inverted_x, 10, 1e-5, guidance_scale)
+        latent_reconstruction, latent_reconstruction_new = self.ddim_sample(inverted_x[-1], cond, uncond_embeddings, guidance_scale)
+        # rgb_reconstruction = self.decode_latents(latent_reconstruction[-1])
+        # latent_reconstruction.reverse()
+        rgb_reconstruction = self.decode_latents(latent_reconstruction_new[-1])
+        latent_reconstruction_new.reverse()
         
-        latent_reconstruction = self.ddim_sample(inverted_x[-1], cond)
-        rgb_reconstruction = self.decode_latents(latent_reconstruction[-1])
-        latent_reconstruction.reverse()
         # inverted_x : inversion을 통해 얻은 latent들
         # rgb_reconstruction : reconstrucion한 image
         # latent_reconstrucion : inversion을 통해 얻은 latent로 다시 forward 진행시켜서 얻은 latent들
-        return inverted_x, rgb_reconstruction, latent_reconstruction, uncond_embeddings
+        
+        return inverted_x, rgb_reconstruction, latent_reconstruction_new, uncond_embeddings
     
     def null_optimization(self, latents, num_inner_steps, epsilon, guidance_scale):
         uncond_embeddings, cond_embeddings = self.context.chunk(2)  # self.context : torch.Size([2, 77, 768])
@@ -708,8 +737,9 @@ class PNP(nn.Module):
 
     @torch.no_grad()
     def denoise_step(self, x, t,guidance_scale,noisy_latent):
+        pdb.set_trace()
         # register the time step and features in pnp injection modules
-        latent_model_input = torch.cat(([noisy_latent]+[x] * 2))
+        latent_model_input = torch.cat(([noisy_latent]+[x] * 2))    # torch.Size([3, 4, 64, 64])
 
         register_time(self, t.item())
 
@@ -755,12 +785,11 @@ class PNP(nn.Module):
         register_conv_control_efficient(self, self.conv_injection_timesteps)
 
     def run_pnp(self,image_path,noisy_latent,target_prompt, uncond_embeddings, guidance_scale=7.5,pnp_f_t=0.8,pnp_attn_t=0.5):
-        
         # load image
         self.image = self.get_data(image_path)
         self.eps = noisy_latent[-1]
 
-        self.text_embeds = self.get_text_embeds(target_prompt, "ugly, blurry, black, low res, unrealistic")
+        self.text_embeds = self.get_text_embeds(target_prompt, "ugly, blurry, black, low res, unrealistic") # size : 
         
         if uncond_embeddings is None:
             self.pnp_guidance_embeds = self.get_text_embeds("", "").chunk(2)[0] # size : torch.Size([1, 77, 768])
@@ -866,7 +895,6 @@ if __name__ == "__main__":
         inverted_x, rgb_reconstruction, _, uncond_embeddings= model.extract_latents(data_path=image_path,
                                             num_steps=NUM_DDIM_STEPS,
                                             inversion_prompt=prompt_src)
-
         edited_image=pnp.run_pnp(image_path,inverted_x,prompt_tar,None, guidance_scale)
         
         image_instruct = txt_draw(f"source prompt: {prompt_src}\ntarget prompt: {prompt_tar}")
@@ -897,7 +925,7 @@ if __name__ == "__main__":
                                         inversion_prompt=prompt_src)
         # _은 size가 torch.Size([1, 4, 64, 64])인 tensor가 51개인 list, -> wts
         # rgb_reconstruction은 reconstruction된 이미지 size는 torch.Size([1, 3, 512, 512])
-        # latent_reconstruction은 size가 torch.Size([1, 4, 64, 64])인 tensor가 50개인 list, -> zs
+        # latent_reconstruction은 size가 torch.Size([2, 4, 64, 64])인 tensor가 50개인 list, -> zs
         edited_image=pnp.run_pnp(image_path,latent_reconstruction,prompt_tar,uncond_embeddings,guidance_scale)
     
         image_instruct = txt_draw(f"source prompt: {prompt_src}\ntarget prompt: {prompt_tar}")
