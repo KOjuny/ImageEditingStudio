@@ -1,0 +1,404 @@
+[
+    {
+      "prompt": "in sticker style",
+      "objects": ["a house", "a temple", "a dog", "a lion"]
+    },
+    {
+      "prompt": "in watercolor painting style",
+      "objects": ["flowers", "Golden Gate bridge", "a chair", "trees", "an airplane"]
+    },
+    {
+      "prompt": "in line drawing style",
+      "objects": ["a village", "a building", "a child running in the park", "a racing car"]
+    },
+    {
+      "prompt": "in cartoon line drawing style",
+      "objects": ["a phone", "a knight on a horse", "a train passing a village", "a tomato in a bowl"]
+    },
+    {
+      "prompt": "in 3D rendering style",
+      "objects": ["slices of watermelon and clouds in the background", "a fox", "a bowl with corn flakes", "a model of a truck"]
+    },
+    {
+      "prompt": "in glowing style",
+      "objects": ["a mushroom", "an elf", "a dragon", "a dwarf"]
+    },
+    {
+      "prompt": "in glowing 3D rendering style",
+      "objects": ["a thumbs up", "a crown", "an avocado", "a big smiley face"]
+    },
+    {
+      "prompt": "in kid crayon drawing style",
+      "objects": ["a bear", "a moose", "a cute koala", "a baby penguin"]
+    },
+    {
+      "prompt": "in wooden sculpture style",
+      "objects": ["an orchid", "a Viking face with beard", "a bird", "an elephant"]
+    },
+    {
+      "prompt": "in oil painting style",
+      "objects": ["a portrait of a person wearing a hat", "a portrait of a woman with long hair", "a person dancing", "a person fishing"]
+    },
+    {
+      "prompt": "in flat cartoon illustration style",
+      "objects": ["a woman walking a dog", "a friendly robot", "a woman reading in the park", "cherry blossoms"]
+    },
+    {
+      "prompt": "in abstract rainbow-colored flowing smoke wave design",
+      "objects": ["a birthday cake", "the letter A", "an espresso machine", "a car"]
+    },
+    {
+      "prompt": "in melting golden 3D rendering style",
+      "objects": ["a flower", "a piano", "a butterfly", "a guitar"]
+    },
+    {
+      "prompt": "in minimalist round BW logo style",
+      "objects": ["a train", "a car", "a bicycle", "an airplane"]
+    },
+    {
+      "prompt": "in neon graffiti style",
+      "objects": ["a rocket", "an astronaut", "a man riding a snowboard", "a pair of rings"]
+    },
+    {
+      "prompt": "in vintage poster style",
+      "objects": ["a teapot", "a teacup", "a stack of books", "a cozy armchair"]
+    },
+    {
+      "prompt": "in woodblock print style",
+      "objects": ["a mountain range", "a bear", "a campfire", "a pine forest"]
+    },
+    {
+      "prompt": "in retro surf art style",
+      "objects": ["a surfboard", "a beach shack", "a wave", "a seagull"]
+    },
+    {
+      "prompt": "in minimal origami style",
+      "objects": ["a paintbrush", "a sunflower field", "a scarecrow", "a rustic barn"]
+    },
+    {
+      "prompt": "in cyberpunk art style",
+      "objects": ["a cityscape", "hovering vehicles", "dragons", "boats"]
+    },
+    {
+      "prompt": "in tattoo art style",
+      "objects": ["a treasure box", "a pirate ship", "a parrot", "a skull"]
+    },
+    {
+      "prompt": "in art deco style",
+      "objects": ["a music stand", "a vintage microphone", "a turtle", "a saxophone"]
+    },
+    {
+      "prompt": "in vintage travel poster style",
+      "objects": ["a tropical island", "a mushroom", "a palm tree", "a cocktail"]
+    },
+    {
+      "prompt": "in retro amusement park style",
+      "objects": ["a carousel", "cotton candy", "a ferris wheel", "balloons"]
+    },
+    {
+      "prompt": "in 3D render, animation studio style",
+      "objects": ["a serene river", "a rowboat", "a bridge", "a willow tree"]
+    },
+    {
+      "prompt": "in 1950s diner art style",
+      "objects": ["a retro guitar", "a jukebox", "a chess piece", "a milkshake"]
+    },
+    {
+      "prompt": "in Scandinavian folk art style",
+      "objects": ["a snowy cabin", "a sleigh", "a snowman", "a winter forest"]
+    },
+    {
+      "prompt": "in fantasy poison book style",
+      "objects": ["a bowl with apples", "a pencil", "a big armor", "magical sunglasses"]
+    },
+    {
+      "prompt": "in Hawaiian sunset painting style",
+      "objects": ["a kiwi fruit", "a set of drums", "a hammer", "a tree"]
+    },
+    {
+      "prompt": "in paper cut art style",
+      "objects": ["a guitar", "a hot air balloon", "a sailboat", "a mountain"]
+    },
+    {
+      "prompt": "in retro hipster style",
+      "objects": ["a coffee cup", "a typewriter", "a pair of glasses", "a vintage camera"]
+    },
+    {
+      "prompt": "in vintage postcard style",
+      "objects": ["a board of backgammon", "a shirt and pants", "shoes", "a cocktail"]
+    },
+    {
+      "prompt": "in tribal tattoo style",
+      "objects": ["a roaring lion", "a soaring eagle", "a dolphin", "a galloping horse"]
+    },
+    {
+      "prompt": "in Japanese ukiyo-e style",
+      "objects": ["a pizza", "candles and roses", "a bottle", "a chef"]
+    },
+    {
+      "prompt": "in fantasy book covers style",
+      "objects": ["a wise owl", "a full moon", "a magical chair", "a book of spells"]
+    },
+    {
+      "prompt": "in hygge style",
+      "objects": ["a cozy cabin", "snow-covered trees", "a warming fireplace", "a steaming cup of cocoa"]
+    },
+    {
+      "prompt": "in Zen garden style",
+      "objects": ["a bottle of wine", "a scone", "a muffin", "a pair of socks"]
+    },
+    {
+      "prompt": "in celestial artwork style",
+      "objects": ["a diver", "a bowl of fruits", "an astronaut", "a carousel"]
+    },
+    {
+      "prompt": "in medieval fantasy illustration style",
+      "objects": ["a horse", "a castle", "a cow", "an old phone"]
+    },
+    {
+      "prompt": "in enchanted 3D rendering style",
+      "objects": ["a mysterious forest", "bioluminescent plants", "a graveyard", "a train station"]
+    },
+    {
+      "prompt": "in travel agency logo style",
+      "objects": ["a globe", "an airplane", "a suitcase", "a compass"]
+    },
+    {
+      "prompt": "in cafe logo style",
+      "objects": ["a persian cat playing with a ball of wool", "a man skiing down the hill", "a train at the station", "a bear eating honey"]
+    },
+    {
+      "prompt": "in educational institution logo style",
+      "objects": ["a book", "a quill pen", "an ink well", "an umbrella"]
+    },
+    {
+      "prompt": "in mechanical repair shop logo style",
+      "objects": ["a hat", "a strawberry", "a screw", "a giraffe"]
+    },
+    {
+      "prompt": "in healthcare and medical clinic logo style",
+      "objects": ["a notebook", "a running shoe", "a robot", "a calculator"]
+    },
+    {
+      "prompt": "in doodle art style",
+      "objects": ["a rubber duck", "a pirate ship", "a rocket", "a pineapple"]
+    },
+    {
+      "prompt": "in abstract geometric style",
+      "objects": ["a trumpet", "a fish bowl", "a palm tree", "a bicycle"]
+    },
+    {
+      "prompt": "in mosaic art style",
+      "objects": ["a teapot", "a kangaroo", "a skyscraper", "a lighthouse"]
+    },
+    {
+      "prompt": "in paper collage style",
+      "objects": ["a ninja", "a hot air balloon", "a submarine", "a watermelon"]
+    },
+    {
+      "prompt": "in origami style",
+      "objects": ["a saxophone", "a sunflower", "a compass", "a laptop"]
+    },
+    {
+      "prompt": "in abstract graffiti style",
+      "objects": ["a penguin", "a bicycle", "a tornado", "a pineapple"]
+    },
+    {
+      "prompt": "in street art style",
+      "objects": ["a magician's hat", "a UFO", "a roller coaster", "a beach ball"]
+    },
+    {
+      "prompt": "in mixed media art style",
+      "objects": ["a cactus", "a shopping cart", "a child playing with cubes", "a camera"]
+    },
+    {
+      "prompt": "in abstract expressionism style",
+      "objects": ["a snowman", "a surfboard", "a helicopter", "a cappuccino"]
+    },
+    {
+      "prompt": "in digital glitch art style",
+      "objects": ["a robot", "a cupcake", "a woman playing basketball", "a sunflower"]
+    },
+    {
+      "prompt": "in psychedelic art style",
+      "objects": ["a treehouse", "a disco ball", "a sailing boat", "a cocktail"]
+    },
+    {
+      "prompt": "in street art graffiti style",
+      "objects": ["a football helmet", "a playmobil", "a truck", "a watch"]
+    },
+    {
+      "prompt": "in pop art style",
+      "objects": ["a cabin", "a leopard", "a squirrel", "a rose"]
+    },
+    {
+      "prompt": "in minimalist surrealism style",
+      "objects": ["a bus", "a drum", "a rabbit", "a shopping mall"]
+    },
+    {
+      "prompt": "in abstract cubism style",
+      "objects": ["a frisbee", "a monkey", "a snake", "skates"]
+    },
+    {
+      "prompt": "in abstract impressionism style",
+      "objects": ["a piano", "a villa", "a snowboard", "a rubber duck"]
+    },
+    {
+      "prompt": "in post-modern art style",
+      "objects": ["a laptop", "a man playing soccer", "a woman playing tennis", "a rolling chair"]
+    },
+    {
+      "prompt": "in neo-futurism style",
+      "objects": ["a cute puppet", "a glass of beer", "a violin", "a child playing with a kite"]
+    },
+    {
+      "prompt": "in abstract constructivism style",
+      "objects": ["a dog", "a brick house", "a lollipop", "a woman playing on a guitar"]
+    },
+    {
+      "prompt": "in fluid art style",
+      "objects": ["a kite surfing", "a pizza", "a child doing homework", "a person doing yoga"]
+    },
+    {
+      "prompt": "in macro photography style",
+      "objects": ["ice cream", "a vintage typewriter", "a pair of reading glasses", "a handwritten letter"]
+    },
+    {
+      "prompt": "in professional food photography style for a menu",
+      "objects": ["a gourmet burger", "a sushi", "a milkshake", "a pizza"]
+    },
+    {
+      "prompt": "in vintage still life photography style",
+      "objects": ["a crystal vase", "a pocket watch", "a compass", "a leather-bound journal"]
+    },
+    {
+      "prompt": "in miniature model style",
+      "objects": ["a sake set", "a stack of books", "a cozy blanket", "a cup of hot cocoa"]
+    },
+    {
+      "prompt": "in outdoor lifestyle photography style",
+      "objects": ["a retro bicycle", "a sunhat", "a picnic basket", "a kite"]
+    },
+    {
+      "prompt": "in realistic 3D render style",
+      "objects": ["a group of hikers on a mountain trail", "a winter evening by the fire", "a hen", "a person enjoying music"]
+    },
+    {
+      "prompt": "in retro music and vinyl photography style",
+      "objects": ["a tent", "a person knitting", "a rural farm scene", "a basket of fresh eggs"]
+    },
+    {
+      "prompt": "in cozy winter lifestyle photography style",
+      "objects": ["a giraffe", "a blanket", "a fork and knife", "a pile of candies"]
+    },
+    {
+      "prompt": "in bokeh photography style",
+      "objects": ["a wild flower", "a ladybug", "an igloo in Antarctica", "a person running"]
+    },
+    {
+      "prompt": "in minimal flat design style",
+      "objects": ["a coffee machine", "a laptop", "a person working", "a plant on the desk"]
+    },
+    {
+      "prompt": "in minimal vector art style",
+      "objects": ["a camera", "a fireman", "a wooden house", "a tall hill"]
+    },
+    {
+      "prompt": "in minimal pastel colors style",
+      "objects": ["a person texting", "a person crawling", "a cozy chair", "a lamp"]
+    },
+    {
+      "prompt": "in minimal digital art style",
+      "objects": ["a smartphone", "a book", "a dinner table", "a glass of wine"]
+    },
+    {
+      "prompt": "in minimal abstract illustration style",
+      "objects": ["a brush", "an artist painting", "a girl holding an umbrella", "a pool table"]
+    },
+    {
+      "prompt": "in minimal monochromatic style",
+      "objects": ["a pair of running shoes", "a motorcycle", "keys", "a fitness machine"]
+    },
+    {
+      "prompt": "in woodcut print style",
+      "objects": ["a compass rose", "a cactus", "a zebra", "a blizzard"]
+    },
+    {
+      "prompt": "in chalk art style",
+      "objects": ["a lantern", "a tricycle", "a seashell", "a swan"]
+    },
+    {
+      "prompt": "in pixel art style",
+      "objects": ["a magnifying glass", "a gorilla", "an airplane", "a swing"]
+    },
+    {
+      "prompt": "in comic book style",
+      "objects": ["hiking boots", "a kangaroo", "an ice cream cone", "a hammock"]
+    },
+    {
+      "prompt": "in vector illustration style",
+      "objects": ["a horseshoe", "a vintage typewriter", "a snail", "a tornado"]
+    },
+    {
+      "prompt": "in isometric illustration style",
+      "objects": ["a lighthouse", "a hot air balloon", "a cat", "a cityscape"]
+    },
+    {
+      "prompt": "in wireframe 3D style",
+      "objects": ["a compass", "a violin", "a palm tree", "a koala"]
+    },
+    {
+      "prompt": "in paper cutouts style",
+      "objects": ["a beach umbrella", "a rocket ship", "a fox", "a waterfall"]
+    },
+    {
+      "prompt": "in blueprint style",
+      "objects": ["a tree stump", "a harp", "a chameleon", "a canyon"]
+    },
+    {
+      "prompt": "in retro comic book style",
+      "objects": ["an elephant", "a UFO toy", "a flamingo", "a lightning bolt"]
+    },
+    {
+      "prompt": "in infographics style",
+      "objects": ["robot", "temple", "jellyfish", "sofa"]
+    },
+    {
+      "prompt": "in geometric shapes style",
+      "objects": ["microscope", "giraffe", "laptop", "rainbow"]
+    },
+    {
+      "prompt": "in cartoon line drawing style",
+      "objects": ["teapot", "dragon toy", "skateboard", "storm cloud"]
+    },
+    {
+      "prompt": "in watercolor and ink wash style",
+      "objects": ["crystal ball", "carousel horse", "hummingbird", "glacier"]
+    },
+    {
+      "prompt": "in dreamy surreal style",
+      "objects": ["feather quill", "satellite dish", "deer", "desert scene"]
+    },
+    {
+      "prompt": "in steampunk mechanical style",
+      "objects": ["map", "saxophone", "mushroom", "dolphin"]
+    },
+    {
+      "prompt": "in 3D realism style",
+      "objects": ["anchor", "clock", "globe", "bicycle"]
+    },
+    {
+      "prompt": "in retro posters style",
+      "objects": ["clock", "helicopter", "whale", "starfish"]
+    },
+    {
+      "prompt": "in bohemian hand-drawn style",
+      "objects": ["binoculars", "bus", "pillow", "cloud"]
+    },
+    {
+      "prompt": "in vintage stamp style",
+      "objects": ["rhino", "telescope", "stool", "panda"]
+    }
+  ]
+  
+  

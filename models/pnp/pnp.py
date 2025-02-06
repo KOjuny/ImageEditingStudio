@@ -218,7 +218,6 @@ class PNP(nn.Module):
 
     @torch.no_grad()
     def denoise_step(self, x, t,guidance_scale,noisy_latent):
-        pdb.set_trace()
         # register the time step and features in pnp injection modules
         latent_model_input = torch.cat(([noisy_latent]+[x] * 2))    # torch.Size([3, 4, 64, 64])
 
