@@ -5,7 +5,7 @@ from diffusers import DDIMScheduler, StableDiffusionPipeline
 import torch
 import numpy as np
 import random
-import sa_handler
+from models.stylealigned import sa_handler
 import os
 import pdb
 
@@ -52,7 +52,7 @@ pipeline = pipeline.to("cuda")
 
 setup_seed()
 for prompt_set in sets_of_prompts:
-    prompts = [f"{obj} in {prompt_set['prompt']}" for obj in prompt_set['objects']]
+    prompts = [f"{obj} {prompt_set['prompt']}" for obj in prompt_set['objects']]
     for i in range(1, len(prompts)):
         handler = sa_handler.Handler(pipeline)
         sa_args = sa_handler.StyleAlignedArgs(share_group_norm=True,
