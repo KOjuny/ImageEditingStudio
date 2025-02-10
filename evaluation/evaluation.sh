@@ -9,6 +9,6 @@ python evaluate.py \
     --annotation_mapping_file "/home/poong/junseok/PIE_Bench/mapping_file.json" \
     --metrics structure_distance psnr_unedit_part lpips_unedit_part mse_unedit_part ssim_unedit_part clip_similarity_source_image clip_similarity_target_image clip_similarity_target_image_edit_part \
     --src_image_folder "/home/poong/junseok/PIE_Bench/annotation_images" \
-    --tgt_methods 1_ddim+masactrl 1_null-text-inversion+masactrl 1_directinversion+masactrl \
-    --result_path masactrl_results.csv \
+    --tgt_methods 1_null-text-inversion+pnp \
+    --result_path pnp_ntinversion_results.csv \
     --evaluate_whole_table

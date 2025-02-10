@@ -13,9 +13,9 @@ for col in column_means.index:
     elif "lpips" in col:
         column_means[col] *= 1000
     elif "mse" in col:
-        column_means[col] += 10000
+        column_means[col] *= 10000
     elif "ssim" in col:
-        column_means[col] += 100
+        column_means[col] *= 100
 
 # 평균 값을 소수점 둘째 자리까지 반올림
 column_means_new = column_means.round(2)

@@ -32,6 +32,12 @@ def setup_seed(seed=1234):
     random.seed(seed)
     torch.backends.cudnn.deterministic = True
     torch.backends.cudnn.benchmark = False
+    
+def check_word_count_equal(text1: str, text2: str) -> bool:
+    words1 = text1.split()
+    words2 = text2.split()
+    
+    return len(words1) == len(words2)
 
 class LocalBlend:
     
@@ -253,8 +259,10 @@ def main():
         for i in range(1,len(prompts)):
             controller = AttentionStore()
             _, x_t = run_and_display([prompts[0]], controller, latent=None, run_baseline=False)
-
-            controller = AttentionRefine([prompts[0],prompts[i]], NUM_DIFFUSION_STEPS, cross_replace_steps=0.8, self_replace_steps=0.4)
+            if check_word_count_equal(prompts[0], prompts[i]):
+                controller = AttentionReplace([prompts[0],prompts[i]], NUM_DIFFUSION_STEPS, cross_replace_steps=0.8, self_replace_steps=0.4)
+            else:
+                controller = AttentionRefine([prompts[0],prompts[i]], NUM_DIFFUSION_STEPS, cross_replace_steps=0.5, self_replace_steps=0.2)
             images, _ = run_and_display([prompts[0],prompts[i]], controller, latent=x_t, run_baseline=True)
 
             # Save Images
