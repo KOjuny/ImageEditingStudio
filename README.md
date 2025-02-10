@@ -30,7 +30,7 @@ pip install -r environment/p2p_requirements.txt
 
 Reproduced quantitative results
 
-![quatitaive](scripts/quantitative.png)
+![quatitative](scripts/quantitative.png)
 
 - NT : [Null-Text Inversion](https://arxiv.org/abs/2211.09794)
 - EF : [Edit-Friendly DDPM Inversion](https://arxiv.org/abs/2304.06140)
@@ -40,7 +40,9 @@ Reproduced quantitative results
 
 <span id="qualitative-results"></span>
 
+### Prompt-to-Prompt Qualitative Results
 
+![qualitative_p2p](scripts/qualitative_p2p.png)
 
 ## 💖 Acknowledgement
 <span id="acknowledgement"></span>
