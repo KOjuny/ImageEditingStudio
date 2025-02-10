@@ -8,7 +8,7 @@ Keywords: Diffusion Model, Image Inversion, Image Editing
 ## 🚀 Getting Started
 <span id="getting-started"></span>
 
-### Environment Requirement 🌍
+### 🌍 Environment Requirement
 <span id="environment-requirement"></span>
 
 - p2p_requirements.txt: for models in `run_editing_p2p.py`
@@ -44,7 +44,7 @@ Reproduced quantitative results
 
 ![qualitative_p2p](scripts/qualitative_p2p.png)
 
-### Pluh-and-Play Qualitative Results
+### Plug-and-Play Qualitative Results
 
 ![qualitative_pnp](scripts/qualitative_pnp.png)
 
