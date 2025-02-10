@@ -44,6 +44,13 @@ Reproduced quantitative results
 
 ![qualitative_p2p](scripts/qualitative_p2p.png)
 
+### Pluh-and-Play Qualitative Results
+
+![qualitative_pnp](scripts/qualitative_pnp.png)
+
+### MasaCtrl Qualitative Results
+![qualitative_masactrl](scripts/qualitative_masactrl.png)
+
 ## 💖 Acknowledgement
 <span id="acknowledgement"></span>
 
