@@ -49,16 +49,6 @@ Reproduced quantitative results
 | EF | ![qualitative_p2p](scripts/EF_p2p.png) |  ![qualitative_pnp](scripts/EF_pnp.png) | ![qualitative_masactrl](scripts/EF_masactrl.png) |
 | Direct | ![qualitative_p2p](scripts/Direct_p2p.png) |  ![qualitative_pnp](scripts/Direct_pnp.png) | ![qualitative_masactrl](scripts/Direct_masactrl.png) |
 
-### Prompt-to-Prompt Qualitative Results
-
-![qualitative_p2p](scripts/qualitative_p2p.png)
-
-### Plug-and-Play Qualitative Results
-
-![qualitative_pnp](scripts/qualitative_pnp.png)
-
-### MasaCtrl Qualitative Results
-![qualitative_masactrl](scripts/qualitative_masactrl.png)
 
 ## 💖 Acknowledgement
 <span id="acknowledgement"></span>
