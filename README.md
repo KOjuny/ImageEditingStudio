@@ -42,8 +42,8 @@ Reproduced quantitative results
 
 | | Prompt-to-prompt | Plug-and-Play | MasaCtrl
 | :-----: | :----: | :----: | :----: |
-| Source Prompts | :----: | :----: | :----: |
-| Target Prompts | :----: | :----: | :----: |
+| Source Prompts | an orange cat sitting on top of a fence | a cute little duck with big eyes | blue light, a black and white cat is playing with a flower |
+| Target Prompts | an black cat sitting on top of a fence | a cute little marmot with big eyes | blue light, a black and white dog is playing with a flower  |
 | DDIM | ![qualitative_p2p](scripts/DDIM_p2p.png) |  ![qualitative_pnp](scripts/DDIM_pnp.png) | ![qualitative_masactrl](scripts/DDIM_masactrl.png) |
 | NT | ![qualitative_p2p](scripts/NT_p2p.png) |  ![qualitative_pnp](scripts/NT_pnp.png) | ![qualitative_masactrl](scripts/NT_masactrl.png) |
 | EF | ![qualitative_p2p](scripts/EF_p2p.png) |  ![qualitative_pnp](scripts/EF_pnp.png) | ![qualitative_masactrl](scripts/EF_masactrl.png) |
