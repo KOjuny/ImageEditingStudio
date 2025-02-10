@@ -40,6 +40,10 @@ Reproduced quantitative results
 
 <span id="qualitative-results"></span>
 
+| | Prompt-to-prompt | Plug-and-Play | MasaCtrl
+| :-----: | :----: | :----: | :----: |
+| Results | ![qualitative_p2p](scripts/qualitative_p2p.png) |  ![qualitative_pnp](scripts/qualitative_pnp.png) | ![qualitative_masactrl](scripts/qualitative_masactrl.png) |
+
 ### Prompt-to-Prompt Qualitative Results
 
 ![qualitative_p2p](scripts/qualitative_p2p.png)
