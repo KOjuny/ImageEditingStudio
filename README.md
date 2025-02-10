@@ -7,7 +7,7 @@ Keywords: Diffusion Model, Image Inversion, Image Editing
 
 
 
-![Table](scripts/qualitative.png)
+![Table](scripts/quantitative.png)
 
 ## 💖 Acknowledgement
 <span id="acknowledgement"></span>
