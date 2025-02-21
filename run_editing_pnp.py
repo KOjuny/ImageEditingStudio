@@ -19,8 +19,6 @@ import torch.nn.functional as nnf
 from torch.optim.adam import Adam
 from torch import autocast, inference_mode
 
-import pdb
-
 from utils.utils import txt_draw,load_512,latent2image
 
 device = torch.device('cuda') if torch.cuda.is_available() else torch.device(

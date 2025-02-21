@@ -20,7 +20,6 @@ from utils.utils import load_512,txt_draw
 
 from torchvision.io import read_image
 
-import pdb
 
 def mask_decode(encoded_mask,image_shape=[512,512]):
     length=image_shape[0]*image_shape[1]

@@ -14,9 +14,6 @@ import argparse
 import json
 import random
 
-import pdb
-
-
 LOW_RESOURCE = False 
 NUM_DIFFUSION_STEPS = 50
 GUIDANCE_SCALE = 7.5

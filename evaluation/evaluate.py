@@ -6,7 +6,6 @@ from PIL import Image
 import csv
 from matrics_calculator import MetricsCalculator
 
-import pdb
 
 def mask_decode(encoded_mask,image_shape=[512,512]):
     length=image_shape[0]*image_shape[1]

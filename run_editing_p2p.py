@@ -5,7 +5,6 @@ import json
 from PIL import Image
 import torch
 import random
-import pdb
 
 from models.p2p_editor import P2PEditor
 
