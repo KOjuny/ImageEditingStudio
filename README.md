@@ -1,14 +1,14 @@
-# Image Editing Studio (~ing)
+# Image Editing Studio
 
 
 This repository reproduces image editing methods using diffusion inversion methods.
 
 Keywords: Diffusion Model, Image Inversion, Image Editing
 
-## 🚀 Getting Started
+## Getting Started
 <span id="getting-started"></span>
 
-### 🌍 Environment Requirement
+### Environment Requirement
 <span id="environment-requirement"></span>
 
 - p2p_requirements.txt: for models in `run_editing_p2p.py`
@@ -23,8 +23,17 @@ conda activate p2p
 conda install pytorch==1.12.1 torchvision==0.13.1 torchaudio==0.12.1 cudatoolkit=11.3 -c pytorch
 pip install -r environment/p2p_requirements.txt
 ```
+## Running Script
 
-## 🥇 Quantitative Results
+```shell
+python run_editing_p2p.py \
+    --data_path "/home/poong/junseok/PIE_Bench" \
+    --output_path "/home/poong/junseok/evaluation/PIE_Bench_output" \
+    --edit_category_list 0 1 2 3 4 5 6 7 8 9 \
+    --edit_method_list "directinversion+p2p"
+```
+
+## Quantitative Results
 
 <span id="quantitative-results"></span>
 
@@ -36,7 +45,7 @@ Reproduced quantitative results
 - EF : [Edit-Friendly DDPM Inversion](https://arxiv.org/abs/2304.06140)
 - Direct : [Direct Inversion](https://arxiv.org/abs/2310.01506)
 
-## 🌟 Qualitative Results
+## Qualitative Results
 
 <span id="qualitative-results"></span>
 
@@ -50,7 +59,7 @@ Reproduced quantitative results
 | Direct | ![qualitative_p2p](scripts/Direct_p2p.png) |  ![qualitative_pnp](scripts/Direct_pnp.png) | ![qualitative_masactrl](scripts/Direct_masactrl.png) |
 
 
-## 💖 Acknowledgement
+## Acknowledgement
 <span id="acknowledgement"></span>
 
 Our code is modified on the basis of [direct-inversion](https://github.com/cure-lab/PnPInversion), thanks to contributors!
