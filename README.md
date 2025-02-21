@@ -24,7 +24,7 @@ conda install pytorch==1.12.1 torchvision==0.13.1 torchaudio==0.12.1 cudatoolkit
 pip install -r environment/p2p_requirements.txt
 ```
 ## Running Script
-
+### Editing
 ```shell
 python run_editing_p2p.py \
     --data_path "/home/poong/junseok/PIE_Bench" \
@@ -32,6 +32,17 @@ python run_editing_p2p.py \
     --edit_category_list 0 1 2 3 4 5 6 7 8 9 \
     --edit_method_list "directinversion+p2p"
 ```
+### Evaluation
+```shell
+python evaluation/evaluate.py \
+    --annotation_mapping_file "/home/poong/junseok/PIE_Bench/mapping_file.json" \
+    --metrics structure_distance psnr_unedit_part lpips_unedit_part mse_unedit_part ssim_unedit_part clip_similarity_source_image clip_similarity_target_image clip_similarity_target_image_edit_part \
+    --src_image_folder "/home/poong/junseok/PIE_Bench/annotation_images" \
+    --tgt_methods 1_ddim+pnp 1_null-text-inversion+pnp 1_directinversion+pnp 4_edit-friendly-inversion+pnp \
+    --result_path pnp_results.csv \
+    --evaluate_whole_table
+```
+If you want average the results, run `evaluation/evaluate_final.py`
 
 ## Quantitative Results
 
