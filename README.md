@@ -3,7 +3,7 @@
 
 This repository reproduces image editing methods using diffusion inversion methods.
 
-Report : [report](Report on Image Editing Studio.pdf)
+Report : [report](report/Report.pdf)
 
 Keywords: Diffusion Model, Image Inversion, Image Editing
 
